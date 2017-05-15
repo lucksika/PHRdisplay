@@ -33,7 +33,8 @@
     "ng-knob": "^0.1.3",
     "chart.js": "^2.3.0",
     "d3": "^4.8.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "chosen": "^1.7.0"
   },
   "repository": {
     "type": "git",
