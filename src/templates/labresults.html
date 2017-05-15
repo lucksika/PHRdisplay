@@ -1,0 +1,22 @@
+<!-- Change to Collapse -->
+<div ng-controller="LabresultCtrl">
+<h3 style="margin-left: 20px" ng-if="noData"><span class="label label-warning">No Lab result Data from last 4 months</span></h3>
+<div ng-repeat="result in results">
+	<div class="col-lg-6 result-chart" id="line-chart">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<a class="med_card" ui-sref=".resultDetail({ref: result.title})">
+					<h4>{{result.title}}</h4>
+				</a>
+			</div>
+			<div class="panel-body">
+				<div class="chart-container">
+				<canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #4FC3F7;"></canvas>  Your result data
+				<canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #F44336;"></canvas>  Maximum
+					<canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="[result.points, result.limits]" chart-labels="result.date" chart-legend="true" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-colors="colours" chart-dataset-override="override">
+					</canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

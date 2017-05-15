@@ -1,0 +1,47 @@
+<style type="text/css">
+  md-checkbox.md-primary{
+    margin: 10px;
+  }
+</style>
+<div>
+  <div class="modal-header" ng-controller="DashboardCustomCtrl">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title" id="modal-title">Dashbord Custom</h3>
+  </div>
+  <form ng-submit="setDashboardWidget()">
+    <div class="modal-body" id="modal-body">
+      <div class="widget_card">
+        <span style="font-size: 28px; color: #30426a;">You can choose: {{amount}}</span>
+      </div>
+      <div class="tab-content" style="padding: 10px">
+        <fieldset class="form-group row">
+          <md-checkbox  ng-disabled="shouldDisable(check.medicine)"  ng-model="check.medicine" ng-change="countAmount()" class="md-primary col-md-12">
+            Medicine schedule
+          </md-checkbox>
+          
+          <md-checkbox  ng-disabled="shouldDisable(check.appointment)"  ng-model="check.appointment" ng-change="countAmount()" class="md-primary col-md-12">
+            Appointment schedule
+          </md-checkbox>
+          <md-checkbox  ng-disabled="shouldDisable(check.nutrientProgress)"  ng-model="check.nutrientProgress" ng-change="countAmount()" class="md-primary col-md-12">
+            Progress of nutrient per day
+          </md-checkbox>
+          <md-checkbox  ng-disabled="shouldDisable(check.nutrientMeal)"  ng-model="check.nutrientMeal" ng-change="countAmount()" class="md-primary col-md-12">
+            Chart of nutrient per meal
+          </md-checkbox>
+          <md-checkbox  ng-disabled="shouldDisable(check.water)" ng-model="check.water" ng-change="countAmount()" class="md-primary col-md-12">
+            Water chart
+          </md-checkbox>
+          
+        </fieldset>
+        <fieldset class="form-group">
+          <div ng-include="chooseType.template"></div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <input type="submit" class="btn btn-primary" value="Set">
+    </div>
+  </form>
+</div>

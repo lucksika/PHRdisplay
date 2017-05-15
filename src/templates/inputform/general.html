@@ -1,0 +1,29 @@
+<style> 
+.md-datepicker-calendar-pane{
+    z-index: 1200;
+}
+</style>
+<fieldset class="form-group">
+	<label class="col-xs-3">Title</label>
+	<select chosen data-placeholder="Select an options" class="chosen-select col-xs-9" ng-model="$parent.general" ng-change="update()" 
+	ng-options="general_list.title for general_list in option.general_list track by general_list.id">
+	</select>
+</fieldset>
+<fieldset class="form-group">
+    <label class="col-xs-3">Value</label>
+    <div class="col-xs-6">
+    <input class="form-control" type="text" ng-model="$parent.general.value"/> 
+    </div>
+    <label class="col-xs-3" ng-if="general.unit != ' '" >{{general.unit}}</label>
+</fieldset>
+<fieldset class="form-group">
+    <label class="col-xs-3">Limitation</label>
+    <div class="col-xs-6">
+    <input class="form-control" type="text" ng-model="$parent.general.limit"/>
+    </div>
+    <label class="col-xs-3" ng-if="general.unit != ' '" >{{general.unit}}</label>
+</fieldset>
+<fieldset class="form-group">
+	<label class="col-xs-3">Date</label>
+	<md-datepicker class="col-xs-9" md-placeholder="Enter date" md-open-on-focus ng-model="$parent.general.date"></md-datepicker>
+</fieldset>

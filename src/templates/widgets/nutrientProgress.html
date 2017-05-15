@@ -1,0 +1,65 @@
+<rd-widget>
+	<rd-widget-body>
+		<div id="line-chart" ng-controller="PieNutrientProgressWidgetCtrl">
+		<div class="col-sm-12">
+		<div class="med_card">
+			<span style="font-size: 28px; color: #30426a;">Nutrient</span>
+			<span style="font-size: 14px; float: right">Last Check:  {{lastcheck | date:'d MMM yyyy'}}</span>
+		</div>
+			
+		</div>		
+		<div>
+		
+		<div style="text-align: center; padding-top: 60px;">
+		<div class="row">
+		<div class="col-md-12">
+				<div class="col-md-6">
+					<div>
+						<span style="color: #283593; font-size: 16px;">Carbohydrate</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.carbohydrate.maxValue | number:1}}, min: {{limit.carbohydrate.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.carbohydrate > limit.carbohydrate.maxValue ? 'danger' : ''}}" value="result.carbohydrate" max="limit.carbohydrate.maxValue">{{result.carbohydrate | number:1}}/{{limit.carbohydrate.maxValue | number:1}}</uib-progressbar>
+					</div>
+					<div>
+						<span style="color: #283593; font-size: 16px;">Protein</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.protein.maxValue | number:1}}, min: {{limit.protein.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.protein > limit.protein.maxValue ? 'danger' : ''}}" value="result.protein" max="limit.protein.maxValue">{{result.protein | number:1}}/{{limit.protein.maxValue | number:1}}</uib-progressbar></div>
+					<div>
+						<span style="color: #283593; font-size: 16px;">Fat</span> 
+						<br>
+						<span style="font-size: 12px;">max: {{limit.fat.maxValue | number:1}}, min: {{limit.fat.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.fat > limit.fat.maxValue ? 'danger' : ''}}" value="result.fat" max="limit.fat.maxValue">{{result.fat | number:1}}/{{limit.fat.maxValue | number:1}}</uib-progressbar>
+					</div>
+					<div>
+						<span style="color: #283593; font-size: 16px;">Calrories</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.calories.maxValue | number:1}}, min: {{limit.calories.minValue | number:1}}
+						<uib-progressbar type="{{result.calories > limit.calories.maxValue ? 'danger' : ''}}" value="result.calories" max="limit.calories.maxValue">{{result.calories | number:1}}/{{limit.calories.maxValue | number:1}}</uib-progressbar>
+					</div>
+				</div>
+				<div class="col-md-6">	
+					<div>
+						<span style="color: #283593; font-size: 16px;">Sodium</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.sodium.maxValue | number:1}}, min: {{limit.sodium.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.sodium > limit.sodium.maxValue ? 'danger' : ''}}" value="result.sodium" max="limit.sodium.maxValue">{{result.sodium | number:1}}/{{limit.sodium.maxValue | number:1}}</uib-progressbar>
+					</div>
+					<div>
+						<span style="color: #283593; font-size: 16px;">Potassium</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.potassium.maxValue | number:1}}, min: {{limit.potassium.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.potassium > limit.potassium.maxValue ? 'danger' : ''}}" value="result.potassium" max="limit.potassium.maxValue">{{result.potassium | number:1}}/{{limit.potassium.maxValue | number:1}}</uib-progressbar></div>
+					<div>
+						<span style="color: #283593; font-size: 16px;">Phosphorus</span>
+						<br>
+						<span style="font-size: 12px;">max: {{limit.phosphorus.maxValue | number:1}}, min: {{limit.phosphorus.minValue | number:1}}</span>
+						<uib-progressbar type="{{result.phosphorus > limit.phosphorus.maxValue ? 'danger' : ''}}" value="result.phosphorus" max="limit.phosphorus.maxValue">{{result.phosphorus | number:1}}/{{limit.phosphorus.maxValue | number:1}}</uib-progressbar>
+					</div>
+				</div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</rd-widget-body>
+</rd-widget>

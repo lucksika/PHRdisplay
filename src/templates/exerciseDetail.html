@@ -1,0 +1,38 @@
+<div style="height: 10vh;">
+  <h2 style="margin-left: 30px; color: #30426a;">{{title}}</h2>
+</div>
+<div style="padding: 20px; ">
+<div ng-repeat="result in results">
+  <div class="result-chart" id="line-chart">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="chart-container">
+        <canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #9CCC65;"></canvas>  Reach the goal ' {{result.goal[0]}} {{unit[result.title]}} '
+         <canvas id="bar" class="chart chart-bar ng-isolate-scope" chart-data="result.points" chart-labels="result.date" chart-legend="true" chart-click="onClick" chart-options="options[result.title]" chart-colors="colours[result.title]" chart-hover="onHover" chart-series="series" width="1046" height="522" style="width: 523px; height: 261px;">
+        </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+<rd-widget>
+  <rd-widget-body>
+    <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Value ( {{unit[result.title]}} )</th>
+        <th>Warning</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="t in table">
+      <tr class="table-warning">
+        <td>{{t.date}}</td>
+        <td>{{t.value}}</td>
+        <td>{{t.overlimit}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </rd-widget-body>
+</rd-widget>
+</div>
+</div>

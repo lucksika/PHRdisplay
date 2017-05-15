@@ -1,0 +1,104 @@
+<style> 
+.md-datepicker-calendar-pane{
+    z-index: 1200;
+}
+div.col-xs-6{
+  padding: 0;
+}
+</style>
+<div class="row">
+<fieldset class="form-group col-xs-6">
+  <label class="col-xs-3">Date</label>
+  <md-datepicker class="col-xs-9" md-placeholder="Enter date" md-open-on-focus ng-model="$parent.nutrient.date"></md-datepicker>
+</fieldset>
+<fieldset class="form-group col-xs-6 row">
+  <label class="col-xs-3">Meal</label>
+  <select chosen width="'50% !important'" placeholder-text-single="'Choose meal'" class="col-xs-9" ng-model="$parent.nutrient.meal" ng-change="update()" 
+  ng-options="meal.title for meal in option.meal_list track by meal.id">
+  </select>
+</fieldset>
+</div>
+<div class="row">
+<div class="col-xs-6">
+<div class="form-group row">
+  <label class="col-xs-5">Protein</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.protein" >
+  </div>
+  <label>g</label>
+</div>
+<div class="form-group row">
+  <label class="col-xs-5">Carbohydrate</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.carbohydrate" >
+  </div>
+  <label>g</label>
+</div>
+<div class="form-group row">
+  <label class="col-xs-5">Fat</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.fat" >
+  </div>
+  <label>g</label>
+</div>
+<div class="form-group row">
+  <label class="col-xs-5">Sodium</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.sodium" >
+  </div>
+  <label>g</label>
+</div>
+<!-- <div class="form-group row">
+  <label class="col-xs-5">Potassium</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.potassium" id="example-tel-input">
+  </div>
+  <label>g</label>
+</div> -->
+</div>
+<div class="col-xs-6">
+<!-- <div class="form-group row">
+  <label class="col-xs-5">Iron</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.iron" id="example-text-input">
+  </div>
+  <label>g</label>
+</div>
+ -->
+ <div class="form-group row">
+  <label class="col-xs-5">Potassium</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.potassium" >
+  </div>
+  <label>g</label>
+</div>
+<!-- <div class="form-group row">
+  <label class="col-xs-5">Cholesterol</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.cholesterol" id="example-search-input">
+  </div>
+  <label>g</label>
+</div> -->
+<div class="form-group row">
+  <label class="col-xs-5">Phosphorus</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.phosphorus" >
+  </div>
+  <label>g</label>
+</div>
+<!-- <div class="form-group row">
+  <label class="col-xs-5">Cafein</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.cafein" id="example-url-input">
+  </div>
+  <label>g</label>
+</div> -->
+<div class="form-group row">
+  <label class="col-xs-5">Calories</label>
+  <div class="col-xs-5">
+    <input class="form-control" type="number" step="0.01" ng-model="$parent.nutrient.nutrients.calories" >
+  </div>
+  <label for="example-tel-input">KCal</label>
+</div>
+</div>
+</div>

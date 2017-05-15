@@ -1,0 +1,31 @@
+<style type="text/css">
+.modal-body{
+  
+}
+</style>
+<div>
+  <div class="modal-header" ng-controller="InputFormCtrl">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 class="modal-title" id="modal-title">Add information</h3>
+  </div>
+  <form ng-submit="saveInputForm()">
+    <div class="modal-body" id="modal-body">
+      <div class="tab-content" style="padding: 10px;">
+        <fieldset class="form-group row">
+          <label class="col-xs-3">Type </label>
+          <select chosen data-placeholder="Select an options" class="col-xs-9" ng-model="chooseType" ng-change="update()"
+          ng-options="type_list.title for type_list in option.type_list track by type_list.id">
+        </select>
+      </fieldset>
+      <fieldset class="form-group">
+        <div ng-include="chooseType.template"></div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <input type="submit" class="btn btn-primary" value="Save"/>
+  </div>
+  </form>
+</div>

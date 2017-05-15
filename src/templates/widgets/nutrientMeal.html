@@ -1,0 +1,22 @@
+<rd-widget>
+	<rd-widget-body>
+		<div id="line-chart" ng-controller="PieNutrientWidgetCtrl">
+		<div class="col-sm-12">
+		<div class="med_card">
+			<span style="font-size: 28px; color: #30426a;">Nutrient Meal</span>
+			<span style="font-size: 14px; float: right">Last Check:  {{lastcheck | date:'d MMM yyyy'}}</span>
+		</div>
+			
+		</div>		
+		<div>
+		
+		<div style="text-align: center; padding-top: 50px;">
+			<!-- <div class="col-md-4"> -->
+			<h3 style="margin-left: 20px;" ng-if="noData"><span class="label label-warning">No Data</span></h3>
+				<canvas class="chart chart-pie" chart-data="meal.data" chart-labels="meal.labels" chart-colors="meal.colours" chart-options="meal.options">
+				</canvas>
+			<!-- </div> -->
+		</div>
+		</div>
+	</rd-widget-body>
+</rd-widget>

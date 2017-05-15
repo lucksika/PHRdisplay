@@ -1,0 +1,28 @@
+<rd-widget>
+<rd-widget-body>
+<div ng-controller="medicineInfoCtrl">
+			<span style="font-size: 28px; color: #30426a;">Medicine schedule</span>
+		<div class="table-responsive" style="padding: 10px;">
+    <table class="table">
+      <thead>
+        <tr class="warning" style="font-size: 28px;">
+		      <th></th>
+          	<th>Before meal</th>
+          	<th>After meal</th>
+		    </tr>
+		  </thead>
+      <tbody ng-repeat="t in table">
+        <tr>
+          <td><b>{{t.time}}</b></td>
+          <td>{{t.before}}</td>
+          <td>{{t.after}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <b>Bedtime :</b> {{bedtime}}
+    </div>  
+    </div>    
+	</rd-widget-body>
+</rd-widget>
+
+

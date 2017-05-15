@@ -1,0 +1,89 @@
+<div ng-controller="MasterCtrl">
+  <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" >
+      <ul class="sidebar">
+        <li class="sidebar-main">
+          <!-- <a ng-click="toggleSidebar()"> -->
+          <a align="center">
+            Medical Records
+            <span class="menu-icon glyphicon glyphicon-heart"></span>
+          </a> 
+        </li>
+        <li ng-if="toggle == true">
+          <rd-widget>
+          <rd-widget-body>
+          <!-- <img align="middle" class="avatar" src="{{profileImg}}"> -->
+          <img ng-controller="AuthenticationCtrl" align="middle" class="avatar"  src="{{FBImg}}">
+          <div class="username-sidebar" style="font-size: 14px; margin-top: 10px;">{{displayProfile.displayName}}</div>
+          <div class="breadcrumb-links">
+            {{displayProfile.birthDate}}
+          </div>
+          <div class="breadcrumb-links">
+            {{displayProfile.phone}}
+          </div>
+        </rd-widget-body>
+      </rd-widget>
+    </li>
+    <li class="sidebar-title"><span>NAVIGATION</span></li>
+    <li class="sidebar-list">
+      <a ui-sref=".dashboard">Dashboard <span class="menu-icon fa fa-home"></span></a>
+    </li>
+    <li class="sidebar-list">
+      <a ui-sref=".profile">Profile <span class="menu-icon fa fa-user"></span></a>
+    </li>
+    <li class="sidebar-list">
+      <a ui-sref=".medication">Medication <span class="menu-icon fa fa-medkit"></span></a>
+    </li>
+    <li class="sidebar-list">
+      <a ui-sref=".foods">Food/Drink <span class="menu-icon fa fa-cutlery"></span></a>
+    </li>
+  </ul>
+</li>
+<!-- /////////////// FOOTTER /////////////// -->
+      <div class="sidebar-footer">
+        <div>
+           <!-- <a href="" ng-controller="AuthenticationCtrl" ng-click="FBlogout()" target="_blank">
+            Logout
+          </a> -->
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+    <script type="text/javascript">
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+    </script>
+   
+    <div id="content-wrapper" ng-controller="DashboardCtrl">
+      <div class="page-content">
+        <!-- Header Bar -->
+        <div class="row header">
+          <div class="col-xs-12">
+            <div class="user pull-right" style="margin: 10px;" >
+            <button style="margin-left: 10px;" class="btn btn-default" ng-click="openModal('dashboardCustom')">
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                </button>
+                <button style="margin-left: 10px;" class="btn btn-primary" ng-click="openModal('inputForm')">Add</button>
+                <img ng-controller="AuthenticationCtrl"  ng-click="alertLogoutDialog()" alt="logout" style="margin-left: 10px; width: 40px; height: 40px; border-radius: 50%;" tooltip-placement="bottom" uib-tooltip="Logout" src="{{FBImg}}">
+            </div>
+            <div class="meta">
+              <div class="page">   
+                <!-- {{path != "" ? path : 'Dashboard'}} -->
+                Personal Health Record Storage and Display
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Header Bar -->
+
+        <!-- Main Content -->
+        <div ui-view="content"></div>
+
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+</div>

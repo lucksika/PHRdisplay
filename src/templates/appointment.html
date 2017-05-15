@@ -1,0 +1,60 @@
+<style> 
+timeline-badge {
+    z-index: -1200;
+}
+select {
+	z-index: 1200;
+}
+</style>
+<rd-widget >
+	<rd-widget-body>
+		<div  ng-controller="TimelineCtrl">
+			<div class="widget_card">
+				<span style="font-size: 28px; color: #30426a;">Timeline</span>
+				
+						<div style="float: right;">
+						<label>Month: &nbsp</label>
+						<select chosen width="'10vw !important'" placeholder-text-single="'Choose month'" ng-model="month" ng-options="month.title for month in monthList track by month.id">
+						</select>
+						<label>Year: &nbsp</label>
+						<input class="form-control" style="display: inline-block; width: 5vw !important;" type="text" ng-model="year">
+					
+					  	<button style="margin-left: 20px;" class="btn btn-info" ng-click="getEventAt()">Get</button>
+						</div>	
+
+				
+			</div>
+			<div style="margin-top: 50px;">
+				<h3 style="margin-left: 20px" ng-if="noData"><span class="label label-warning">No appointment data</span></h3>
+				<timeline>
+					<timeline-event ng-repeat="event in eventsPage">
+						<timeline-badge class="{{event.badgeClass}}">
+							<i style="display: inline-block;" class="glyphicon {{event.badgeIconClass}}"></i>
+						</timeline-badge>
+							<timeline-panel class="{{event.badgeClass}}">
+							<div class="col-lg-12">
+								<div class="col-lg-4" style="float: left;">
+									<h3 style=" color: #D84315;">
+									{{event.date}}
+									</h3>
+								</div>
+								<timeline-heading>
+								<div class="col-lg-8" style="float: right;">
+									<h3 style="color: #01579B;" class="timeline-title">{{event.title}}</h3>
+								</div>
+								</timeline-heading>
+								 <timeline-body>
+								 <div class="col-lg-8" style="float: right;">
+								 	<p>{{event.content}}</p>
+								 	<p>{{event.time}}</p>
+              						<p>{{event.note}}</p>
+              					</div>
+            					</timeline-body>
+							</timeline-panel>
+						</div>
+					</timeline-event>
+				</timeline>
+			</div>
+		</div>
+	</rd-widget-body>
+</rd-widget>

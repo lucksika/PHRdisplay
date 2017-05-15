@@ -1,0 +1,46 @@
+<style> 
+.md-datepicker-calendar-pane{
+    z-index: 1200;
+}
+</style>
+<div class="row">
+  <fieldset class="form-group">
+    <label class="col-xs-3">Title</label>
+    <select chosen data-placeholder="Select an options" class="col-xs-9" ng-model="$parent.medicine.result" ng-change="update()" 
+    ng-options="medicine_list.title for medicine_list in option.medicine_list track by medicine_list.title">
+    </select>
+  </fieldset>   
+  <fieldset class="form-group">
+      <label class="col-xs-3">Amout / time (pill)</label>
+      <div class="col-xs-6">
+      <input class="form-control"  ng-model="$parent.medicine.amount">
+      </div>
+  </fieldset>
+  <label class="col-xs-3">Meal</label>
+  <fieldset class="form-group row">
+      <md-checkbox ng-model="$parent.medicine.med_meal.morning"  class="md-primary col-md-12">
+        Morning
+      </md-checkbox>
+      <md-checkbox ng-model="$parent.medicine.med_meal.noon"  class="md-primary col-md-12">
+        Noon
+      </md-checkbox>
+      <md-checkbox ng-model="$parent.medicine.med_meal.evening"  class="md-primary col-md-12">
+        Evening
+      </md-checkbox>
+      <md-checkbox ng-model="$parent.medicine.med_meal.bedtime"  class="md-primary col-md-12">
+        Bedtime
+      </md-checkbox>
+  </fieldset>
+  <label class="col-xs-3">Time Daily</label>
+  <fieldset class="form-group row">
+      <md-checkbox ng-model="$parent.medicine.times_daily.before"  class="md-primary col-md-12">
+        Before meal
+      </md-checkbox>
+      <md-checkbox ng-model="$parent.medicine.times_daily.after"  class="md-primary col-md-12">
+        After meal
+      </md-checkbox>
+      <md-checkbox ng-model="$parent.medicine.times_daily.bed"  class="md-primary col-md-12">
+        Bedtime
+      </md-checkbox>
+  </fieldset>
+</div>

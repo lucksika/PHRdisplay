@@ -1,0 +1,21 @@
+<!-- Change to Collapse -->
+<div ng-controller="BarExerciseCtrl">
+<h3 style="margin-left: 20px" ng-if="noData"><span class="label label-warning">No exercise actitity from last 7 day</span></h3>
+<div ng-repeat="result in results">
+	<div class="col-lg-6 result-chart">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<a class="med_card" ui-sref=".exerciseDetail({ref: result.title})">
+					<h4>{{result.title}}</h4>
+				</a>
+			</div>
+			<div class="panel-body">
+				<div class="chart-container">
+				<canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #9CCC65;"></canvas>  Reach the goal ' {{result.goal[0]}} {{unit[result.title]}} '
+				<canvas id="bar" class="chart chart-bar ng-isolate-scope" chart-data="result.points" chart-labels="result.date" chart-legend="true" chart-click="onClick" chart-options="options[result.title]" chart-colors="colours[result.title]" chart-hover="onHover" chart-series="series" width="1046" height="522" style="width: 523px; height: 261px;">
+				</canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

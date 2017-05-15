@@ -1,0 +1,39 @@
+<div style="height: 10vh;">
+  <h2 style="margin-left: 30px; color: #30426a;">{{title}}</h2>
+</div>
+<div style="padding: 20px; ">
+<div ng-repeat="result in results">
+  <div class="result-chart" id="line-chart">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="chart-container">
+        <canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #4FC3F7;"></canvas>  Your result data
+        <canvas style="margin-left: 15px;width: 15px; height: 15px; background-color: #F44336;"></canvas>  Maximum
+          <canvas id="line" class="chart chart-line ng-isolate-scope" chart-data="[result.points, result.limits]" chart-labels="result.date" chart-legend="true" chart-click="onClick" chart-hover="onHover" chart-series="series" chart-options="options" chart-colors="colours" chart-dataset-override="override">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+<rd-widget>
+  <rd-widget-body>
+    <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Value (mm/dL)</th>
+        <th>Warning</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="t in table">
+      <tr class="table-warning">
+        <td>{{t.date}}</td>
+        <td>{{t.value}}</td>
+        <td>{{t.overlimit}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </rd-widget-body>
+</rd-widget>
+</div>
+</div>

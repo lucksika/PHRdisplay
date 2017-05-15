@@ -1,0 +1,20 @@
+<h3 style="margin: 20px; color: #283593">Today: {{today | date:'d MMMM yyyy'}}</h3>
+
+<div class="col-lg-12" >
+	<div class="col-md-6">
+		<div style="margin: 10px;" ng-include="currentWidgets[0]"></div>  
+	</div>
+	<div class="col-md-6">
+		<div style="margin: 10px;"  ng-include="currentWidgets[1]"></div>
+	</div>
+</div>
+
+<div class="col-lg-12">
+	<div class="col-md-6">
+		<div style="margin: 10px;"  ng-include="currentWidgets[2]"></div>
+	</div>
+
+	<div class="col-md-6">
+		<div style="margin: 10px;"  ng-include="currentWidgets[3]"></div>
+	</div>
+</div>

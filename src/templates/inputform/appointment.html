@@ -1,0 +1,33 @@
+<style> 
+.md-datepicker-calendar-pane{
+    z-index: 1200;
+}
+</style>
+<fieldset class="form-group">
+    <label class="col-xs-3">Title</label>
+    <div class="col-xs-6">
+    <input class="form-control"  ng-model="$parent.appointment.description.title">
+    </div>
+</fieldset>
+<fieldset class="form-group">
+    <label class="col-xs-3">Place</label>
+    <div class="col-xs-6">
+    <input class="form-control"  ng-model="$parent.appointment.description.place">
+    </div>
+</fieldset>
+<fieldset class="form-group">
+    <label class="col-xs-3">Note</label>
+    <div class="col-xs-6">
+    <textarea class="form-control" rows="5" ng-model="$parent.appointment.description.note"></textarea>
+    </div>
+</fieldset>
+<div class="row">
+<fieldset class="form-group col-xs-6">
+  <label class="col-xs-3">Date</label>
+  <md-datepicker class="col-xs-9" md-placeholder="Enter date" md-open-on-focus ng-model="$parent.appointment.date"></md-datepicker>
+</fieldset>
+<fieldset class="form-group col-xs-6 row">
+  <label class="col-xs-3">Time</label>
+  <div uib-timepicker hour-step="hstep" minute-step="mstep" show-meridian="true" ng-model="$parent.appointment.time"></div>
+</fieldset>
+</div>

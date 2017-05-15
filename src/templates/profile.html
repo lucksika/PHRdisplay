@@ -1,0 +1,46 @@
+<!-- <div ng-if="toggle == true"> -->
+<div ng-controller="ProfileCtrl">
+<div class="col-lg-6 ">
+<rd-widget>
+<!-- <button class="btn btn-info" style="float: right;">edit</button> -->
+<rd-widget-body>
+	<div class="username-profile" style="color: #30426a; margin: 10px;">{{profile.firstname}} {{profile.lastname}}</div>
+		<span class="subtopic">Height:</span> {{profile.height}} m<br>
+		<span class="subtopic">Weight:</span> {{profile.weight}} kg <br>
+		<span class="subtopic">Blood Type:</span> {{profile.bloodtype}} <br>
+		<span class="subtopic">Telephone:</span> {{profile.tel}} <br>
+		<span class="subtopic">Date of Birth:</span>  {{profile.birthdate}}<br>
+		<span class="subtopic">Age:</span> {{profile.age}}<br>
+		<span class="subtopic">Gender:</span> {{profile.gender}}<br>
+		<span class="subtopic">Address:</span> {{profile.address}}<br>
+		<span class="subtopic">Language:</span> {{profile.language}}<br>
+		<span class="subtopic">Emergency call: </span> {{profile.emergencycall}} <br>
+		<span class="subtopic">Health Condition:</span> {{profile.condition}} <br>
+		<span class="subtopic">Allergies:</span> {{profile.allergies}} <br>
+		<span class="subtopic">Surgical:</span> {{profile.surgical}} <br>
+</rd-widget-body>
+</rd-widget>
+</div>
+
+<div class="col-lg-6 ">
+<rd-widget>
+<rd-widget-body>
+<div style="margin: 10px" ng-include="'../templates/widgets/medicine.html'"></div>  
+<!-- <div id="line-chart" ng-controller="BarWeightCtrl">
+		<a class="med_card" href="#/creatinine">
+			<h3>Weight</h3>
+		</a>		
+		<span class="subtopic">Last Check:</span> {{lastcheck_bun | date:'yyyy-MM-dd'}}
+		<canvas id="bar" class="chart chart-bar ng-isolate-scope" chart-data="data" chart-labels="labels" chart-legend="true" chart-click="onClick" chart-options="options" chart-colors="colours" chart-hover="onHover" chart-series="series" width="1046" height="522" style="width: 523px; height: 261px;">
+		</canvas>
+</div> -->
+</div>	
+</rd-widget-body>
+</rd-widget>
+</div>
+
+</rd-widget-body>
+</rd-widget>
+</div>
+</div>
+<!-- </div> -->
