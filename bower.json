@@ -35,7 +35,7 @@
     "d3": "^4.8.0",
     "jquery": "^3.2.1",
     "chosen": "^1.7.0",
-    "angular-resource": "^1.6.4"
+    "angular-resource": "1.5.0"
   },
   "repository": {
     "type": "git",
